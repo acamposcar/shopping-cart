@@ -1,3 +1,4 @@
+import styles from './Shop.module.css';
 import Card from '../components/shop/Card';
 
 function Shop(props) {
@@ -7,18 +8,18 @@ function Shop(props) {
     onAddToCart(itemID);
   };
   return (
-
-    products.map((product) => (
-      <Card
-        key={product.id}
-        id={product.id}
-        title={product.title}
-        price={product.price}
-        image={product.image}
-        onAddToCart={addToCart}
-      />
-    ))
-
+    <div className={styles.grid}>
+      {products.map((product) => (
+        <Card
+          key={product.id}
+          id={product.id}
+          title={product.title}
+          price={product.price}
+          image={product.image}
+          onAddToCart={addToCart}
+        />
+      ))}
+    </div>
   );
 }
 

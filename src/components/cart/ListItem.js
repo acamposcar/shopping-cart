@@ -15,26 +15,40 @@ function ListItem(props) {
   const reduceQuantity = (itemID) => {
     onLessOne(itemID);
   };
+
+  const itemTotal = price * quantity;
+
   return (
     <div className={styles.card}>
-      <div className={styles.title}>
-        {title}
-        {' '}
-        {quantity}
-        {' '}
-        {price}
-        {' '}
+      <img className={styles.image} src={image} alt="" />
+      <div>
+        <div className={styles.flex}>
+          <h6 className={styles.title}>{title}</h6>
+          <p className={styles.total}>
+            $
+            {itemTotal.toFixed(2)}
+          </p>
+        </div>
+        <p className={styles.price}>
+          $
+          {price}
+        </p>
+        <div className={styles.flex}>
+          <div className={styles.quantityGroup}>
+            <button type="button" className={styles.quantityButton} onClick={() => reduceQuantity(id)}>
+              -
+            </button>
+            <p className={styles.quantity}>{quantity}</p>
+            <button type="button" className={styles.quantityButton} onClick={() => increaseQuantity(id)}>
+              +
+            </button>
+          </div>
+          <button type="button" className={styles.delete} onClick={() => deleteItem(id)}>
+            Delete
+          </button>
+        </div>
       </div>
-      <img src={image} alt="" />
-      <button type="button" onClick={() => deleteItem(id)}>
-        Delete
-      </button>
-      <button type="button" onClick={() => increaseQuantity(id)}>
-        +
-      </button>
-      <button type="button" onClick={() => reduceQuantity(id)}>
-        -
-      </button>
+      <div />
     </div>
   );
 }

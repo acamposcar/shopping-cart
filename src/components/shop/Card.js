@@ -6,18 +6,19 @@ function Card(props) {
   } = props;
 
   const addToCart = (itemID) => {
-    console.log(itemID);
-
     onAddToCart(itemID);
   };
 
   return (
     <div className={styles.card}>
-      <div className={styles.title}>{title}</div>
-      <img src={image} alt="" />
-      <button type="button" onClick={() => addToCart(id)}>
-        Add to cart $
+      <img className={styles.image} src={image} alt="" />
+      <h5 className={styles.title}>{title}</h5>
+      <p className={styles.price}>
+        $
         {price}
+      </p>
+      <button type="button" className={styles.button} onClick={() => addToCart(id)}>
+        ADD TO CART
       </button>
     </div>
   );

@@ -1,1 +1,5 @@
-.main {}
+.main {
+    width: 90%;
+    max-width: 60rem;
+    margin: 0 auto;
+}
