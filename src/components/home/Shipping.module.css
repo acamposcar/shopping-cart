@@ -1,0 +1,32 @@
+.background {
+    background-color: var(--primary);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-top: 6rem;
+    padding: 6rem 0;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 60rem;
+    color: rgb(235, 235, 235);
+}
+
+.group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.title {
+    margin: 0.5rem 0;
+}
+
+.description {
+    font-size: 1rem;
+    color: rgb(201, 201, 201);
+    margin: 0;
+}

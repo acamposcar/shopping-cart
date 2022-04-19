@@ -1,0 +1,19 @@
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.title {
+    font-size: 5rem;
+}
+
+.description {
+    font-size: 1.1rem;
+    color: rgb(63, 63, 63);
+}
+
+.img {
+    height: 550px;
+    object-fit: cover;
+}
