@@ -1,4 +1,6 @@
 import ListItem from '../components/cart/ListItem';
+import styles from './Cart.module.css';
+import Checkout from '../components/cart/Checkout';
 
 function Cart(props) {
   const {
@@ -18,19 +20,24 @@ function Cart(props) {
     onLessOne(itemID);
   };
   return (
-    cart.map((product) => (
-      <ListItem
-        key={product.id}
-        id={product.id}
-        title={product.title}
-        price={product.price}
-        image={product.image}
-        quantity={product.quantity}
-        onDelete={deleteItem}
-        onPlusOne={increaseQuantity}
-        onLessOne={reduceQuantity}
-      />
-    ))
+    <div className={styles.flexRow}>
+      <div className={styles.flexColumn}>
+        { cart.map((product) => (
+          <ListItem
+            key={product.id}
+            id={product.id}
+            title={product.title}
+            price={product.price}
+            image={product.image}
+            quantity={product.quantity}
+            onDelete={deleteItem}
+            onPlusOne={increaseQuantity}
+            onLessOne={reduceQuantity}
+          />
+        ))}
+      </div>
+      <Checkout cart={cart} />
+    </div>
   );
 }
 

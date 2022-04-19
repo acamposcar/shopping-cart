@@ -1,0 +1,20 @@
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.flexRow {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.title {
+    font-size: 5rem;
+}
+
+.description {
+    font-size: 1.1rem;
+    color: rgb(63, 63, 63);
+}
